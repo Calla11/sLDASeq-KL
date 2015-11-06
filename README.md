@@ -57,9 +57,7 @@ $ bash pre_processing.sh
 
 >* 3.运行模型
 
-在matlab路径下使用matlab软件
-
-先后运行ldamain.m、ldamain_B.m、KL.m
+在matlab路径下使用matlab软件，先后运行ldamain.m、ldamain_B.m、KL.m
 
 matlab路径下Output文件夹中sLDASeq_KL.txt，则是两个条件下各个基因中异构体比例的KL散度，用此来进行差异异构体比例检测。
 
