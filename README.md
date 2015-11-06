@@ -40,7 +40,7 @@ $ python SE.py
 ###输出文件
 * Output文件夹中sLDASeq_KL.txt则是两个条件下各个基因中异构体比例的KL散度
 
-#实例
+#测试用例
 * 参考序列的注释文件：Homo_sapiens.GRCh37.70.cdna.all.fa.gz 下载地址：ftp://ftp.ensembl.org/pub/release-70/fasta/homo_sapiens/cdna/Homo_sapiens.GRCh37.70.cdna.all.fa.gz
 
 >* 1.在Example路径下读段比对
