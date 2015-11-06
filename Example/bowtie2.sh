@@ -15,3 +15,7 @@ bowtie2 -f -p 4  -k 20 --reorder --no-unal --no-hd --no-sq -x Homo_sapiens.GRCh3
 bowtie2 -f -p 4  -k 20 --reorder --no-unal --no-hd --no-sq -x Homo_sapiens.GRCh37.70.cdna.all.index -U example6_B.fa -S example6_B.sam
 bowtie2 -f -p 4  -k 20 --reorder --no-unal --no-hd --no-sq -x Homo_sapiens.GRCh37.70.cdna.all.index -U example7_B.fa -S example7_B.sam
 bowtie2 -f -p 4  -k 20 --reorder --no-unal --no-hd --no-sq -x Homo_sapiens.GRCh37.70.cdna.all.index -U example8_B.fa -S example8_B.sam
+
+python extract_data.py
+
+python extract_data_B.py
