@@ -1,0 +1,40 @@
+
+fid = fopen('./refFlat/Ensemble.Gene.Info_iso.txt');
+mkdir('Output');
+while ~feof(fid)
+    l = fgetl(fid);
+    refFlat_line = textscan(l,'%s');
+    char(refFlat_line{1}(1))
+    a = ['./alpha_A/',char(refFlat_line{1}(1))];
+    b = ['./alpha_B/',char(refFlat_line{1}(1))];
+    fa=fopen(a);
+    fb=fopen(b);
+    if fa>0&&fb>0
+        alpha = load(['./alpha_A/',char(refFlat_line{1}(1))]);
+        gma = load(['./alpha_B/',char(refFlat_line{1}(1))]);
+        alpha=alpha./sum(alpha);
+        gma=gma./sum(gma);
+        k=size(alpha,2);    
+        sum=0;
+        for i=1:k
+            for j=1:k
+                sum=sum+(log(alpha(i)/alpha(j))-log(gma(i)/gma(j))).^2;
+            end
+        end
+        ad=sqrt(1/(2*k)*sum);
+        
+        DE = fopen(['./','sLDASeq_aitchison.txt'], 'a');
+        fprintf(DE,'%c',char(refFlat_line{1}(1)));
+        fprintf(DE,'\t');
+        fprintf(DE,'%f\n',ad);
+        fclose(DE);
+        fclose(fa);
+        fclose(fb);
+    elseif fa>0
+        fclose(fa);
+    elseif fb>0
+        fclose(fb);
+    end
+
+end
+fclose(fid);
