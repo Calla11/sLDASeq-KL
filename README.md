@@ -42,22 +42,21 @@ $ python SE.py
 
 #实例
 * 参考序列的注释文件：Homo_sapiens.GRCh37.70.cdna.all.fa.gz 下载地址：ftp://ftp.ensembl.org/pub/release-70/fasta/homo_sapiens/cdna/Homo_sapiens.GRCh37.70.cdna.all.fa.gz
->* 1.读段比对
 
-在Example路径下
+>* 1.在Example路径下读段比对
+
 ```shell
 $ bash bowtie2.sh
 ```
->* 2.数据处理
+>* 2.在Pre-Processing路径下数据处理
 
-在Pre-Processing路径下
 ```shell
 $ bash pre_processing.sh
 ```
 
->* 3.运行模型
+>* 3.在matlab路径下运行模型
 
-在matlab路径下使用matlab软件，先后运行ldamain.m、ldamain_B.m、KL.m
+使用matlab软件，先后运行ldamain.m、ldamain_B.m、KL.m
 
 matlab路径下Output文件夹中sLDASeq_KL.txt，则是两个条件下各个基因中异构体比例的KL散度，用此来进行差异异构体比例检测。
 
